@@ -1,0 +1,248 @@
+.allstar STATS
+1 commits
+1 stars
+0 contributors
+1 branches
+0 tags
+0 forks
+0 releases
+0 closed issues
+0 environments
+Number of lines of md:1
+Number of lines of yaml:6
+
+
+docker-julia STATS
+84 commits
+36 stars
+6 contributors
+1 branches
+0 tags
+13 forks
+0 releases
+28 closed issues
+0 environments
+Number of lines of Dockerfile:77
+Number of lines of md:1
+Number of lines of jl:78
+
+
+docker-python STATS
+2321 commits
+2305 stars
+132 contributors
+29 branches
+229 tags
+925 forks
+151 releases
+2970 closed issues
+0 environments
+Number of lines of md:111
+Number of lines of gitignore:5
+Number of lines of tmpl:726
+Number of lines of sh:87
+Number of lines of txt:30552
+Number of lines of Dockerfile:302
+Number of lines of xml:24360
+Number of lines of py:4792
+Number of lines of tpl:12
+Number of lines of json:164
+Number of lines of shp:158
+Number of lines of shx:3
+Number of lines of png:2492
+Number of lines of jpg:221
+Number of lines of feather:2
+Number of lines of csv:430
+Number of lines of ipynb:75
+Number of lines of onnx:309
+Number of lines of npz:82352
+Number of lines of gz:67
+Number of lines of pb:2153
+Number of lines of data-00000-of-00001:138
+Number of lines of index:11
+Number of lines of pdf:190
+Number of lines of tif:37
+Number of lines of wav:1295
+
+
+docker-rcran STATS
+469 commits
+18 stars
+8 contributors
+6 branches
+0 tags
+14 forks
+0 releases
+340 closed issues
+0 environments
+Number of lines of Dockerfile:51
+Number of lines of md:29
+Number of lines of sh:682
+Number of lines of yaml:152
+Number of lines of R:211
+
+
+docker-rstats STATS
+438 commits
+138 stars
+17 contributors
+1 branches
+121 tags
+91 forks
+72 releases
+815 closed issues
+0 environments
+Number of lines of Dockerfile:158
+Number of lines of md:72
+Number of lines of R:632
+Number of lines of sh:20
+Number of lines of json:13
+Number of lines of tpl:12
+Number of lines of ipynb:30
+Number of lines of csv:2
+Number of lines of png:100
+
+
+jupyterlab STATS
+36 commits
+42 stars
+4 contributors
+3 branches
+0 tags
+10 forks
+0 releases
+29 closed issues
+0 environments
+Number of lines of dockerignore:20
+Number of lines of gitattribute:8
+Number of lines of gitignore:17
+Number of lines of md:130
+Number of lines of png:1063
+Number of lines of Dockerfile:17
+Number of lines of sh:5
+Number of lines of json:158
+Number of lines of js:6
+Number of lines of ts:778
+Number of lines of tsx:623
+Number of lines of css:29
+Number of lines of svg:18
+Number of lines of lock:4572
+
+
+kaggle-api STATS
+154 commits
+5785 stars
+33 contributors
+6 branches
+12 tags
+1055 forks
+6 releases
+1255 closed issues
+0 environments
+Number of lines of gitignore:64
+Number of lines of md:1271
+Number of lines of yaml:2022
+Number of lines of json:5
+Number of lines of in:1
+Number of lines of py:17220
+Number of lines of cfg:2
+
+
+kaggle-environments STATS
+420 commits
+267 stars
+27 contributors
+67 branches
+38 tags
+136 forks
+6 releases
+961 closed issues
+0 environments
+Number of lines of gcloudignore:17
+Number of lines of gitignore:158
+Number of lines of md:524
+Number of lines of in:7
+Number of lines of sh:397
+Number of lines of yaml:9
+Number of lines of Dockerfile:76
+Number of lines of py:16458
+Number of lines of ipynb:49499
+Number of lines of js:3313
+Number of lines of json:1391
+Number of lines of java:2082
+Number of lines of jar:3126
+Number of lines of ts:2381
+Number of lines of txt:302
+Number of lines of html:768
+Number of lines of gz:50
+Number of lines of og:18
+Number of lines of DS_Store:9
+
+
+kagglehub STATS
+77 commits
+7 stars
+5 contributors
+10 branches
+24 tags
+2 forks
+5 releases
+457 closed issues
+0 environments
+Number of lines of gitignore:160
+Number of lines of md:236
+Number of lines of Dockerfile:18
+Number of lines of py:3456
+Number of lines of toml:167
+Number of lines of gz:1
+Number of lines of json:1
+Number of lines of txt:1
+Number of lines of yaml:228
+
+
+learntools STATS
+2629 commits
+426 stars
+32 contributors
+34 branches
+4 tags
+223 forks
+0 releases
+1928 closed issues
+0 environments
+Number of lines of gitignore:119
+Number of lines of md:349
+Number of lines of py:19001
+Number of lines of DS_Store:1
+Number of lines of csv:327982
+Number of lines of txt:101
+Number of lines of yaml:908
+Number of lines of ipynb:86214
+Number of lines of sh:847
+Number of lines of png:141849
+Number of lines of pdf:8398
+Number of lines of cpg:5
+Number of lines of dbf:10
+Number of lines of prj:5
+Number of lines of shp:18
+Number of lines of shx:12
+Number of lines of zip:1650
+Number of lines of sh~:78
+
+
+pipelinehelpers STATS
+2 commits
+7 stars
+1 contributors
+1 branches
+0 tags
+6 forks
+0 releases
+0 closed issues
+0 environments
+Number of lines of Rbuildignore:2
+Number of lines of gitignore:3
+Number of lines of R:115
+Number of lines of Rproj:21
+
+

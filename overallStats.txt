@@ -1,0 +1,63 @@
+Total,Median
+Number of Commits:6631,154.0
+Number of Stars:9032,42.0
+Number of Contributors:265,8.0
+Number of Branches:159,6.0
+Number of Tags:428,4.0
+Number of Forks:2475,14.0
+Number of Releases:240,0.0
+Number of Closed Issues:8783,457.0
+Number of Environments:0,0.0
+Number of lines of md:2724,111.0
+Number of lines of yaml:3325,6.0
+Number of lines of Dockerfile:699,18.0
+Number of lines of jl:78,0.0
+Number of lines of gitignore:526,5.0
+Number of lines of tmpl:726,0.0
+Number of lines of sh:2038,5.0
+Number of lines of txt:30956,0.0
+Number of lines of xml:24360,0.0
+Number of lines of py:60927,0.0
+Number of lines of tpl:24,0.0
+Number of lines of json:1732,1.0
+Number of lines of shp:176,0.0
+Number of lines of shx:15,0.0
+Number of lines of png:145504,0.0
+Number of lines of jpg:221,0.0
+Number of lines of feather:2,0.0
+Number of lines of csv:328414,0.0
+Number of lines of ipynb:135818,0.0
+Number of lines of onnx:309,0.0
+Number of lines of npz:82352,0.0
+Number of lines of gz:118,0.0
+Number of lines of pb:2153,0.0
+Number of lines of data-00000-of-00001:138,0.0
+Number of lines of index:11,0.0
+Number of lines of pdf:8588,0.0
+Number of lines of tif:37,0.0
+Number of lines of wav:1295,0.0
+Number of lines of R:958,0.0
+Number of lines of dockerignore:20,0.0
+Number of lines of gitattribute:8,0.0
+Number of lines of js:3319,0.0
+Number of lines of ts:3159,0.0
+Number of lines of tsx:623,0.0
+Number of lines of css:29,0.0
+Number of lines of svg:18,0.0
+Number of lines of lock:4572,0.0
+Number of lines of in:8,0.0
+Number of lines of cfg:2,0.0
+Number of lines of gcloudignore:17,0.0
+Number of lines of java:2082,0.0
+Number of lines of jar:3126,0.0
+Number of lines of html:768,0.0
+Number of lines of og:18,0.0
+Number of lines of DS_Store:10,0.0
+Number of lines of toml:167,0.0
+Number of lines of cpg:5,0.0
+Number of lines of dbf:10,0.0
+Number of lines of prj:5,0.0
+Number of lines of zip:1650,0.0
+Number of lines of sh~:78,0.0
+Number of lines of Rbuildignore:2,0.0
+Number of lines of Rproj:21,0.0
