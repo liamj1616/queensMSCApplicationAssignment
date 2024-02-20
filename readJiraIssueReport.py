@@ -37,8 +37,6 @@ def readJiraIssueReport(url):
         components = soup.find("span", {"id": "components-val"}).text.strip()
         components = '[' + components.replace(' ','') + ']'
 
-        # labels = soup.find("span", {"id": "labels-13028113-value"}).text.strip()
-        # labels = '[' + labels.replace(' ','') + ']'
         labels_string = '['
         label_divs = soup.find_all("div", class_="labels")
         for i in range(len(label_divs)):
