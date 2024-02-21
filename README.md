@@ -5,14 +5,14 @@ the download the libraries in requirements.txt using the command:
 pip install -r requirements.txt
 ```
 
-## getKaggleGitHubStats.py
+## getKaggleGitHubRepoStats.py
 
 Prior to running this project, ensure you set up an environment variable
 named githubToken and assign it a Github token. To run this project, enter 
 the command in your working directory:
 
 ```
-python getKaggleGitHubStats.py
+python getKaggleGitHubRepoStats.py
 ```
 
 The stats for each individual repo will be outputted to the file
