@@ -1,5 +1,12 @@
-import requests
+import requests, time
+
 from bs4 import BeautifulSoup
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 def readJiraIssueReport(url):
     response = requests.get(url)
@@ -66,26 +73,71 @@ def readJiraIssueReport(url):
 
         description = soup.find("div", {"id": "description-val"}).text.strip().replace('\n','')
     
-        # COMMENTS AREN'T READING PROPERLY!!!!!
-        comment_header_divs = soup.find_all("div", class_="action-head")
-        comment_body_divs = soup.find_all("div", class_="action-body flooded")
+        # Since comments are lazy-loaded based on an onClick event, need to use a driver
+        driver = webdriver.Chrome()
+        driver.get(url)
+        lazy_load_button = driver.find_element(By.XPATH, "//li[@id='comment-tabpanel']")
+        lazy_load_button.click()
+
+        time.sleep(5)
+
+        soup = BeautifulSoup(driver.page_source, "html.parser")
         comment_string = '['
-        if comment_header_divs and comment_body_divs:
-            if len(comment_header_divs) != len(comment_body_divs):
-                for i in range(len(comment_header_divs)):
-                    '''
-                    Code for reading comments will be inserted here
-                    '''
-                    if i != len(comment_header_divs) - 1:
-                        comment_string += ','
-            else:
-                print('Something went wrong in reading comments')
+
+        comment_divs = soup.find_all("div", class_="action-head")
+        '''
+        This returns 2 divs for each comment: one that contains the HTML
+        source code to show if the the comment is collapsed, therefore
+        only the commenter and the comment time is shown and one that 
+        contains the HTML source code to show if the comment is expanded
+        which contains the comment itself. Therefore, we will iterate 
+        through every second item in comment_divs
+        '''
+        if comment_divs:
+            for i in range(1,len(comment_divs),2):
+                commenter = comment_divs[i].find("a").text.strip()
+                comment_string += '[' + commenter + ','
+                comment_string += comment_divs[i].find("time").get("datetime") + ','
+
+                comment = comment_divs[i].find("div", class_="action-details flooded").text.strip()
+                comment = comment.replace("\n","")
+                
+                cur_reading = ''
+                reading_commenter = True
+                waiting_for_post_date = False
+                reading_post_date = False
+                reading_comment = False
+                for char in comment:
+                    if reading_comment:
+                        comment_string += char
+                    elif reading_post_date:
+                        cur_reading += char
+                        if len(cur_reading) == 15:
+                            reading_comment = True
+                            reading_post_date = False
+                    elif waiting_for_post_date:
+                        if char.isnumeric():
+                            cur_reading += char
+                            waiting_for_post_date = False
+                            reading_post_date = True
+                    elif reading_commenter:
+                        cur_reading += char
+                        if cur_reading == commenter:
+                            cur_reading = ''
+                            reading_commenter = False
+                            waiting_for_post_date = True
+                        
+                comment_string += ']'
+                if i != len(comment_divs) - 1:
+                    comment_string += ','
         else:
-            print("No comments found")
+            print('No comments found')
 
         comment_string += ']'
-            
+        print(comment_string)
 
+        driver.quit()
+            
         with open('jira_issue_report.csv', 'w') as outfile:
             outfile.write('Issue Key,Summary,Type,Status,Priority,Resolution,Affects Versions,' + 
                           'Fix Versions,Components,Labels,Assignee,Reporter,' 
