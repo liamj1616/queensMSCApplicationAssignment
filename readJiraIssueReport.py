@@ -1,4 +1,4 @@
-import requests, time
+import requests, time, datetime
 
 from bs4 import BeautifulSoup
 
@@ -7,6 +7,78 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
+def convert_to_epoch_timestamp(timestamp):
+    year = ''
+    month = ''
+    day = ''
+    hour = ''
+    minute = ''
+    second = ''
+
+    reading_year = True
+    reading_month = False
+    reading_day = False
+    reading_hour = False
+    reading_minute = False
+    reading_second = False
+
+    for char in timestamp:
+        if reading_year:
+            if char == '-':
+                reading_year = False
+                reading_month = True
+                continue
+            else:
+                year += char
+                continue
+        elif reading_month:
+            if char == '-':
+                reading_month = False
+                reading_day = True
+                continue
+            else:
+                month += char
+                continue
+        elif reading_day:
+            if char == 'T':
+                reading_day = False
+                reading_hour = True
+                continue
+            else:
+                day += char
+                continue
+        elif reading_hour:
+            if char == ':':
+                reading_hour = False
+                reading_minute = True
+                continue
+            else:
+                hour += char
+                continue
+        elif reading_minute:
+            if char == ':':
+                reading_minute = False
+                reading_second = True
+                continue
+            else:
+                minute += char
+                continue
+        elif reading_second:
+            if char == '+':
+                break
+            else:
+                second += char
+
+    timestamp = datetime.datetime(int(year),
+                                  int(month),
+                                  int(day),
+                                  int(hour),
+                                  int(minute),
+                                  int(second)
+                                  )
+    
+    return str(timestamp.timestamp())
 
 def readJiraIssueReport(url):
     response = requests.get(url)
@@ -62,7 +134,8 @@ def readJiraIssueReport(url):
         date_divs = soup.find_all("dl", class_="dates")
         for i in range(len(date_divs)):
             date_title_string += date_divs[i].find("dt").string.strip()
-            date_string += date_divs[i].find("time").get("datetime")
+            cur_date = date_divs[i].find("time").get("datetime")
+            date_string += cur_date + '/' + convert_to_epoch_timestamp(cur_date)
 
             if i != len(date_divs) - 1:
                 date_title_string += ','
@@ -97,7 +170,8 @@ def readJiraIssueReport(url):
             for i in range(1,len(comment_divs),2):
                 commenter = comment_divs[i].find("a").text.strip()
                 comment_string += '[' + commenter + ','
-                comment_string += comment_divs[i].find("time").get("datetime") + ','
+                post_date = comment_divs[i].find("time").get("datetime") + ','
+                comment_string += post_date + '/' + convert_to_epoch_timestamp(post_date)
 
                 comment = comment_divs[i].find("div", class_="action-details flooded").text.strip()
                 comment = comment.replace("\n","")
@@ -134,7 +208,6 @@ def readJiraIssueReport(url):
             print('No comments found')
 
         comment_string += ']'
-        print(comment_string)
 
         driver.quit()
             
